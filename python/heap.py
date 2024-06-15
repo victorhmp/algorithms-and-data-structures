@@ -74,8 +74,9 @@ class MaxHeap:
         return
 
 
-my_heap = MaxHeap([16, 14, 10, 8, 7, 9, 3, 2, 4, 1], 10)
-my_other_heap = MaxHeap([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10)
+if __name__ == "__main__":
+    my_heap = MaxHeap([16, 14, 10, 8, 7, 9, 3, 2, 4, 1], 10)
+    my_other_heap = MaxHeap([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10)
 
-print(my_other_heap)
-print(my_heap)
+    print(my_other_heap)
+    print(my_heap)
