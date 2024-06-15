@@ -18,7 +18,12 @@ class MaxHeap:
         self.items = [None] + input_array
         self.heap_size = size
 
-        # Actually build the heap from an input array.
+        # The loop invariant we're assuming here is that:
+        # At the start of each iteration, each node i+1, i+2, ..., n is the
+        # root of a max-heap. At the end, when i would be zero, all elements
+        # 1, 2, 3, ..., n are the root of a max-heap.
+        # This is also anchored at the fact that elements items[n//2 + 1:n] are
+        # all leaves of the tree. That's why we can start at n//2 and go down.
         for i in range(size // 2, 0, -1):
             self.max_heapify(i)
 
@@ -38,7 +43,8 @@ class MaxHeap:
 
     # This is the most interesting method of the class.
     # It checks for the heap property, starting at `index` and fixes the heap
-    # if it needs to, recursively.
+    # if it needs to, recursively. Also of note is that the recursive calls
+    # move "down" the tree.
     def max_heapify(self, index):
         left_index = self.left(index)
         right_index = self.right(index)
