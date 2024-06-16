@@ -12,9 +12,11 @@
 # - Basic operations run in time at most proportional to the height of the tree.
 
 
-# Note: this heap is 1-indexed.
+# Note: This is not a good OOO design and I'm exposing more than I should here
+# for the sake of simplicity.
 class MaxHeap:
     def __init__(self, input_array, size):
+        # The items array is 1-indexed, just to make the math easier.
         self.items = [None] + input_array
         self.heap_size = size
 
