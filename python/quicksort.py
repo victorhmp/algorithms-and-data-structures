@@ -6,8 +6,12 @@
 # It's also interesting that quicksort actually has a worst-case running time
 # worse then both heapsort and mergesort, but it's still the most used sorting
 # algorithm in practice. Although, in practice, its implementation does include
-# randomness in the choice of the pivot for partitions and further optimization
-# specific to the library of language that implements it.
+# randomness in the choice of the pivot for partitions and also mix quicksort
+# with other sorting methods when convinient to optimize even further.
+#
+# Python's built-in sorting was actually TimSort (worst case performance
+# of n*lg(n) and best case performance of O(n)), up to Python 3.11, a combi-
+# nation of merge-sort and insertion-sort. Now Python uses Powersort.
 
 
 def quicksort(input_array, low, high):
